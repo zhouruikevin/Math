@@ -3,6 +3,7 @@ package example.com.math;
 import org.junit.Test;
 
 import example.com.math.sort.heap.HeapMethodFactory;
+import example.com.math.sort.heap.MathQuestion;
 
 /**
  * Created by Administrator on 2016/8/12.
@@ -28,6 +29,14 @@ public class HeapMethodFactoryTest {
     public void testMinHeapDownCreate() {
         HeapMethodFactory.minHeapCreate(mArr);
         printArr(mArr, mArr.length);
+    }
+
+    @Test
+    public void testFindTopNumber() {
+        int N = 2;
+        int[] tops = new int[N];
+        MathQuestion.findTopNumber(mArr, mArr.length, tops, N);
+        HeapMethodFactory.printArr(tops, N);
     }
 
     public void printArr(int[] arr, int n) {
